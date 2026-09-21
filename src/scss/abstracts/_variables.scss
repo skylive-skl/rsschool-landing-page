@@ -1,0 +1,26 @@
+// Breakpoints
+$bp-desktop: 1440px;
+$bp-tablet: 768px;
+$bp-mobile: 380px;
+
+// Typography
+$font-main: 'Inter', sans-serif;
+
+// Transitions
+$transition-default: 0.3s ease;
+$transition-fast: 0.2s ease;
+
+// Border Radii
+$radius-xs: 4px;
+$radius-sm: 8px;
+$radius-md: 16px;
+$radius-lg: 24px;
+$radius-xl: 40px;
+$radius-round: 100px;
+$radius-circle: 50%;
+
+// Container
+$container-max-width: 1440px;
+$container-padding-desktop: 40px;
+$container-padding-tablet: 40px;
+$container-padding-mobile: 16px;

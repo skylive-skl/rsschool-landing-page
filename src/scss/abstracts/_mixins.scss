@@ -1,0 +1,19 @@
+@use 'variables' as *;
+
+@mixin media-down($bp) {
+  @media (max-width: $bp) {
+    @content;
+  }
+}
+
+@mixin media-up($bp) {
+  @media (min-width: ($bp + 1px)) {
+    @content;
+  }
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
