@@ -1,0 +1,73 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.theme-toggle {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 64px;
+  height: 32px;
+  padding: 3px;
+  background-color: transparent;
+  border: 1px solid var(--color-border-primary);
+  border-radius: $radius-round;
+  cursor: pointer;
+  transition: border-color $transition-default;
+  flex-shrink: 0;
+
+  &__thumb {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 24px;
+    height: 24px;
+    border-radius: $radius-circle;
+    background-color: var(--color-bg-container);
+    transition: transform $transition-default, background-color $transition-default;
+    z-index: 1;
+  }
+
+  &__icon {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    color: var(--color-text-primary);
+    transition: color $transition-default, opacity $transition-default;
+
+    svg {
+      width: 16px;
+      height: 16px;
+      display: block;
+    }
+
+    &--light {
+      color: var(--color-text-secondary);
+    }
+
+    &--dark {
+      opacity: 0.6;
+    }
+  }
+}
+
+[data-theme='dark'] .theme-toggle {
+  &__thumb {
+    transform: translateX(32px);
+    background-color: var(--color-bg-body);
+  }
+
+  &__icon--light {
+    opacity: 0.6;
+    color: var(--color-text-primary);
+  }
+
+  &__icon--dark {
+    opacity: 1;
+    color: var(--color-text-btn-primary);
+  }
+}

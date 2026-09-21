@@ -33,6 +33,12 @@
     align-items: center;
   }
 
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+
   &__menu-link {
     display: inline-flex;
     align-items: center;
