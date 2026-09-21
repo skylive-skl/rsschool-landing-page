@@ -7,6 +7,55 @@
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
   </head>
   <body>
+    <header class="header" id="header">
+      <div class="header__container container">
+        <a href="./index.html" class="header__logo logo" aria-label="Coffee House home page">
+          <img src="./src/assets/icons/logo.svg" alt="Coffee House logo" width="100" height="60" class="logo__img" />
+        </a>
+        <nav class="header__nav nav" id="nav-menu">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a href="./index.html#favorite" class="nav__link">Favorite coffee</a>
+            </li>
+            <li class="nav__item">
+              <a href="./index.html#about" class="nav__link">About</a>
+            </li>
+            <li class="nav__item">
+              <a href="./index.html#app" class="nav__link">Mobile app</a>
+            </li>
+            <li class="nav__item">
+              <a href="./index.html#contact" class="nav__link">Contact us</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="header__actions">
+          <button type="button" class="theme-toggle" aria-label="Switch to dark theme" aria-pressed="false">
+            <span class="theme-toggle__thumb" aria-hidden="true"></span>
+            <span class="theme-toggle__icon theme-toggle__icon--light" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <circle cx="12" cy="12" r="4.5"/>
+                <path d="M12 2v2.5M12 19.5V22M4.93 4.93l1.77 1.77M17.3 17.3l1.77 1.77M2 12h2.5M19.5 12H22M4.93 19.07l1.77-1.77M17.3 6.7l1.77-1.77"/>
+              </svg>
+            </span>
+            <span class="theme-toggle__icon theme-toggle__icon--dark" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/>
+              </svg>
+            </span>
+          </button>
+          <a href="./menu.html" class="header__menu-link menu-link is-active" aria-current="page">
+            <span class="menu-link__text">Menu</span>
+            <img src="./src/assets/icons/cup.svg" alt="" width="20" height="20" aria-hidden="true" class="menu-link__icon" />
+          </a>
+          <button class="burger header__burger" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-menu">
+            <span class="burger__line" aria-hidden="true"></span>
+            <span class="burger__line" aria-hidden="true"></span>
+            <span class="burger__line" aria-hidden="true"></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
     <script type="module" src="./src/js/menu.js"></script>
   </body>
 </html>
