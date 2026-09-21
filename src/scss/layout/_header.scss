@@ -55,6 +55,20 @@
       border-bottom-color: var(--color-text-primary);
     }
   }
+
+  @include media-down($bp-tablet) {
+    &__nav {
+      display: none;
+    }
+
+    &__menu-link {
+      display: none;
+    }
+
+    &__actions {
+      gap: 16px;
+    }
+  }
 }
 
 .nav {
