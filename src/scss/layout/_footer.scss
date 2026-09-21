@@ -1,0 +1,112 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.footer {
+  padding-bottom: 40px;
+
+  &__wrapper {
+    background-color: var(--color-bg-container);
+    border-radius: $radius-xl;
+    padding: 100px;
+    color: var(--color-text-secondary);
+    display: flex;
+    justify-content: space-between;
+    gap: 100px;
+    transition: background-color $transition-default, color $transition-default;
+  }
+
+  &__content {
+    max-width: 530px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__title {
+    font-size: 60px;
+    font-weight: 600;
+    line-height: 1.25;
+    color: var(--color-text-secondary);
+
+    &--accent {
+      color: var(--color-text-accent);
+      font-style: italic;
+    }
+  }
+
+  &__socials {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 40px;
+  }
+
+  &__social-item {
+    display: flex;
+  }
+
+  &__social-link {
+    width: 60px;
+    height: 60px;
+    border-radius: $radius-circle;
+    border: 1px solid var(--color-border-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-secondary);
+    transition: border-color $transition-default, color $transition-default, background-color $transition-default;
+
+    img {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  &__contacts {
+    max-width: 530px;
+    padding-top: 30px;
+  }
+
+  &__contacts-title {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.25;
+    color: var(--color-text-secondary);
+    margin-bottom: 40px;
+  }
+
+  &__contacts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__contact-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--color-text-secondary);
+  }
+
+  &__contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--color-text-secondary);
+    padding-bottom: 4px;
+    border-bottom: 2px solid transparent;
+    transition: color $transition-default, border-color $transition-default;
+  }
+
+  &__contact-icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+  }
+}
