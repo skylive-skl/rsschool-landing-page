@@ -85,6 +85,121 @@
           </div>
         </div>
       </section>
+
+      <section class="favorite" id="favorite">
+        <div class="favorite__container container">
+          <h2 class="favorite__title">
+            Choose your <span class="favorite__title--accent">favorite</span> coffee
+          </h2>
+          <div class="slider favorite__slider">
+            <div class="slider__content">
+              <button
+                type="button"
+                class="button button--circle slider__btn slider__btn--prev"
+                aria-label="Previous slide"
+              >
+                <img
+                  src="./src/assets/icons/arrow-left.svg"
+                  alt=""
+                  width="24"
+                  height="24"
+                  aria-hidden="true"
+                  class="slider__btn-icon"
+                />
+              </button>
+
+              <div class="slider__viewport">
+                <ul class="slider__track">
+                  <!-- Slide 1 -->
+                  <li class="slider__slide">
+                    <div class="slider__image-box">
+                      <img
+                        src="./src/assets/images/coffee-slider-1.png"
+                        alt="S'mores Frappuccino"
+                        class="slider__image"
+                      />
+                    </div>
+                    <div class="slider__info">
+                      <h3 class="slider__title">S’mores Frappuccino</h3>
+                      <p class="slider__description">
+                        This new drink takes an espresso and mixes it with brown sugar and cinnamon before being topped
+                        to perfection with oat milk.
+                      </p>
+                      <p class="slider__price">$5.50</p>
+                    </div>
+                  </li>
+
+                  <!-- Slide 2 -->
+                  <li class="slider__slide">
+                    <div class="slider__image-box">
+                      <img
+                        src="./src/assets/images/coffee-slider-2.png"
+                        alt="Caramel Macchiato"
+                        class="slider__image"
+                      />
+                    </div>
+                    <div class="slider__info">
+                      <h3 class="slider__title">Caramel Macchiato</h3>
+                      <p class="slider__description">
+                        Fragrant and velvety espresso with chocolate fudge sauce, caramel syrup, and topped with
+                        whipped cream.
+                      </p>
+                      <p class="slider__price">$5.00</p>
+                    </div>
+                  </li>
+
+                  <!-- Slide 3 -->
+                  <li class="slider__slide">
+                    <div class="slider__image-box">
+                      <img
+                        src="./src/assets/images/coffee-slider-3.png"
+                        alt="Ice coffee"
+                        class="slider__image"
+                      />
+                    </div>
+                    <div class="slider__info">
+                      <h3 class="slider__title">Ice coffee</h3>
+                      <p class="slider__description">
+                        A popular summer drink that combines fresh brewed espresso with milk and ice, topped with
+                        whipped cream.
+                      </p>
+                      <p class="slider__price">$4.50</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+              <button
+                type="button"
+                class="button button--circle slider__btn slider__btn--next"
+                aria-label="Next slide"
+              >
+                <img
+                  src="./src/assets/icons/arrow-right.svg"
+                  alt=""
+                  width="24"
+                  height="24"
+                  aria-hidden="true"
+                  class="slider__btn-icon"
+                />
+              </button>
+            </div>
+
+            <!-- Controls / Indicators -->
+            <div class="slider__controls">
+              <span class="slider__indicator is-active" aria-label="Slide 1">
+                <span class="slider__progress"></span>
+              </span>
+              <span class="slider__indicator" aria-label="Slide 2">
+                <span class="slider__progress"></span>
+              </span>
+              <span class="slider__indicator" aria-label="Slide 3">
+                <span class="slider__progress"></span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer class="footer" id="contact">
