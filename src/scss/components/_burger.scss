@@ -17,6 +17,12 @@
   transition: border-color $transition-default;
   flex-shrink: 0;
 
+  @media (hover: hover) {
+    &:hover {
+      border-color: var(--color-text-accent);
+    }
+  }
+
   @include media-down($bp-tablet) {
     display: flex;
   }

@@ -69,13 +69,21 @@
     gap: 8px;
     background-color: var(--color-bg-body);
     color: var(--color-text-primary);
+
+    @media (hover: hover) {
+      &:hover {
+        .hero__btn-icon {
+          transform: translateX(4px);
+        }
+      }
+    }
   }
 
   &__btn-icon {
     width: 20px;
     height: 20px;
     flex-shrink: 0;
-    transition: transform $transition-default;
+    transition: transform $transition-default, filter $transition-default;
   }
 
   @include media-down($bp-tablet) {
@@ -101,5 +109,11 @@
       padding: 60px 16px;
       min-height: auto;
     }
+  }
+}
+
+[data-theme='dark'] {
+  .hero__btn-icon {
+    filter: invert(1);
   }
 }

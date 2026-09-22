@@ -14,6 +14,14 @@
   outline: none;
   transition: background-color $transition-default, border-color $transition-default;
 
+  @media (hover: hover) {
+    &:hover {
+      .card__image {
+        transform: scale(1.05);
+      }
+    }
+  }
+
   &__image-box {
     width: 270px;
     height: 270px;

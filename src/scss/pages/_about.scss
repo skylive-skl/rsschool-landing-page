@@ -34,6 +34,14 @@
     border-radius: 20px;
     overflow: hidden;
 
+    @media (hover: hover) {
+      &:hover {
+        .about__image {
+          transform: scale(1.05);
+        }
+      }
+    }
+
     &--large {
       height: 590px;
     }

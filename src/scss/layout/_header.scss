@@ -54,6 +54,12 @@
     &.is-active {
       border-bottom-color: var(--color-text-primary);
     }
+
+    @media (hover: hover) {
+      &:hover {
+        border-bottom-color: var(--color-text-primary);
+      }
+    }
   }
 
   @include media-down($bp-tablet) {
@@ -94,6 +100,12 @@
     &.is-active {
       border-bottom-color: var(--color-text-primary);
     }
+
+    @media (hover: hover) {
+      &:hover {
+        border-bottom-color: var(--color-text-primary);
+      }
+    }
   }
 }
 
@@ -102,5 +114,12 @@
     width: 20px;
     height: 20px;
     flex-shrink: 0;
+    transition: filter $transition-default;
+  }
+}
+
+[data-theme='dark'] {
+  .menu-link__icon {
+    filter: invert(1);
   }
 }

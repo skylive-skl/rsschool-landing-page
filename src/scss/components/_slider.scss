@@ -17,6 +17,14 @@
   &__btn {
     flex-shrink: 0;
     z-index: 2;
+
+    @media (hover: hover) {
+      &:hover {
+        .slider__btn-icon {
+          filter: invert(1);
+        }
+      }
+    }
   }
 
   &__btn-icon {
@@ -166,5 +174,11 @@
 [data-theme='dark'] {
   .slider__btn-icon {
     filter: invert(1);
+  }
+
+  @media (hover: hover) {
+    .slider__btn:hover .slider__btn-icon {
+      filter: none;
+    }
   }
 }

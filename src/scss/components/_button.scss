@@ -27,6 +27,13 @@
     padding: 10px 20px;
     border-color: var(--color-border-primary);
     color: var(--color-text-primary);
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: var(--color-bg-btn-secondary-hover);
+        color: var(--color-text-btn-secondary-hover);
+      }
+    }
   }
 
   &--circle {
@@ -36,6 +43,14 @@
     border-color: var(--color-control-border);
     color: var(--color-text-primary);
     flex-shrink: 0;
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: var(--color-control-bg-active);
+        border-color: var(--color-control-bg-active);
+        color: var(--color-control-icon-hover);
+      }
+    }
   }
 
   &--tag {
@@ -55,6 +70,19 @@
         color: var(--color-text-primary);
       }
     }
+
+    @media (hover: hover) {
+      &:hover:not(.is-active):not([aria-selected='true']) {
+        background-color: var(--color-bg-tag-active);
+        color: var(--color-text-tag-active);
+        border-color: var(--color-border-tag-active);
+
+        .button__icon {
+          background-color: var(--color-bg-body);
+          color: var(--color-text-primary);
+        }
+      }
+    }
   }
 
   &--app {
@@ -65,12 +93,25 @@
     min-width: 200px;
     height: 64px;
     box-sizing: border-box;
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: var(--color-bg-tag-active);
+        border-color: var(--color-border-tag-active);
+        color: var(--color-text-tag-active);
+
+        .button__store-icon {
+          filter: invert(1);
+        }
+      }
+    }
   }
 
   &__store-icon {
     width: 36px;
     height: 36px;
     flex-shrink: 0;
+    transition: filter $transition-default;
   }
 
   &__store-text {
@@ -101,5 +142,21 @@
     align-items: center;
     justify-content: center;
     transition: background-color $transition-default, color $transition-default;
+  }
+}
+
+[data-theme='dark'] {
+  .button__store-icon {
+    filter: invert(1);
+  }
+
+  .button--tag .button__icon img {
+    filter: invert(1);
+  }
+
+  @media (hover: hover) {
+    .button--app:hover .button__store-icon {
+      filter: none;
+    }
   }
 }

@@ -60,6 +60,14 @@
       width: 24px;
       height: 24px;
     }
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: var(--color-bg-body);
+        border-color: var(--color-bg-body);
+        color: var(--color-text-primary);
+      }
+    }
   }
 
   &__contacts {
@@ -102,6 +110,12 @@
     padding-bottom: 4px;
     border-bottom: 2px solid transparent;
     transition: color $transition-default, border-color $transition-default;
+
+    @media (hover: hover) {
+      &:hover {
+        border-bottom-color: var(--color-text-secondary);
+      }
+    }
   }
 
   &__contact-icon {

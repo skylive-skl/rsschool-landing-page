@@ -44,13 +44,22 @@
   &__load-more {
     display: none;
     margin-top: 40px;
+
+    @media (hover: hover) {
+      &:hover {
+        .menu__load-more-icon {
+          filter: invert(1);
+          transform: rotate(45deg);
+        }
+      }
+    }
   }
 
   &__load-more-icon {
     width: 24px;
     height: 24px;
     display: block;
-    transition: transform $transition-default;
+    transition: transform $transition-default, filter $transition-default;
   }
 
   @include media-down($bp-tablet) {
@@ -85,5 +94,12 @@
 [data-theme='dark'] {
   .menu__load-more-icon {
     filter: invert(1);
+  }
+
+  @media (hover: hover) {
+    .menu__load-more:hover .menu__load-more-icon {
+      filter: none;
+      transform: rotate(45deg);
+    }
   }
 }
