@@ -56,6 +56,214 @@
       </div>
     </header>
 
+    <main class="main">
+      <section class="menu" id="menu">
+        <div class="menu__container container">
+          <h1 class="menu__title">
+            Behind each of our cups hides an <span class="menu__title--accent">amazing surprise</span>
+          </h1>
+
+          <!-- Category Tabs -->
+          <div class="tabs menu__tabs" role="tablist" aria-label="Menu categories">
+            <button
+              type="button"
+              class="button button--tag tabs__btn is-active"
+              role="tab"
+              aria-selected="true"
+              aria-controls="menu-products"
+              id="tab-coffee"
+            >
+              <span class="button__icon">
+                <img src="./src/assets/icons/cup.svg" alt="" width="16" height="16" aria-hidden="true" />
+              </span>
+              <span class="button__text">Coffee</span>
+            </button>
+            <button
+              type="button"
+              class="button button--tag tabs__btn"
+              role="tab"
+              aria-selected="false"
+              aria-controls="menu-products"
+              id="tab-tea"
+            >
+              <span class="button__icon">
+                <img src="./src/assets/icons/tea.svg" alt="" width="16" height="16" aria-hidden="true" />
+              </span>
+              <span class="button__text">Tea</span>
+            </button>
+            <button
+              type="button"
+              class="button button--tag tabs__btn"
+              role="tab"
+              aria-selected="false"
+              aria-controls="menu-products"
+              id="tab-dessert"
+            >
+              <span class="button__icon">
+                <img src="./src/assets/icons/dessert.svg" alt="" width="16" height="16" aria-hidden="true" />
+              </span>
+              <span class="button__text">Dessert</span>
+            </button>
+          </div>
+
+          <!-- Products Grid -->
+          <ul class="menu__grid" id="menu-products" role="region" aria-labelledby="tab-coffee">
+            <!-- Card 1 -->
+            <li class="menu__item">
+              <article class="card" tabindex="0">
+                <div class="card__image-box">
+                  <img src="./images/menu/coffee-1.jpg" alt="Irish coffee" class="card__image" />
+                </div>
+                <div class="card__content">
+                  <div class="card__info">
+                    <h3 class="card__title">Irish coffee</h3>
+                    <p class="card__description">
+                      Fragrant black coffee with Jameson Irish whiskey and whipped milk
+                    </p>
+                  </div>
+                  <p class="card__price">$7.00</p>
+                </div>
+              </article>
+            </li>
+
+            <!-- Card 2 -->
+            <li class="menu__item">
+              <article class="card" tabindex="0">
+                <div class="card__image-box">
+                  <img src="./images/menu/coffee-2.jpg" alt="Kahlua coffee" class="card__image" />
+                </div>
+                <div class="card__content">
+                  <div class="card__info">
+                    <h3 class="card__title">Kahlua coffee</h3>
+                    <p class="card__description">
+                      Classic coffee with milk and Kahlua liqueur under a cap of frothed milk
+                    </p>
+                  </div>
+                  <p class="card__price">$7.00</p>
+                </div>
+              </article>
+            </li>
+
+            <!-- Card 3 -->
+            <li class="menu__item">
+              <article class="card" tabindex="0">
+                <div class="card__image-box">
+                  <img src="./images/menu/coffee-3.jpg" alt="Honey raf" class="card__image" />
+                </div>
+                <div class="card__content">
+                  <div class="card__info">
+                    <h3 class="card__title">Honey raf</h3>
+                    <p class="card__description">Espresso with frothed milk, cream and aromatic honey</p>
+                  </div>
+                  <p class="card__price">$5.50</p>
+                </div>
+              </article>
+            </li>
+
+            <!-- Card 4 -->
+            <li class="menu__item">
+              <article class="card" tabindex="0">
+                <div class="card__image-box">
+                  <img src="./images/menu/coffee-4.jpg" alt="Ice cappuccino" class="card__image" />
+                </div>
+                <div class="card__content">
+                  <div class="card__info">
+                    <h3 class="card__title">Ice cappuccino</h3>
+                    <p class="card__description">Cappuccino with spicy foam in a high glass with ice</p>
+                  </div>
+                  <p class="card__price">$6.00</p>
+                </div>
+              </article>
+            </li>
+
+            <!-- Card 5 -->
+            <li class="menu__item">
+              <article class="card" tabindex="0">
+                <div class="card__image-box">
+                  <img src="./images/menu/coffee-5.jpg" alt="Espresso" class="card__image" />
+                </div>
+                <div class="card__content">
+                  <div class="card__info">
+                    <h3 class="card__title">Espresso</h3>
+                    <p class="card__description">Classic black coffee</p>
+                  </div>
+                  <p class="card__price">$4.50</p>
+                </div>
+              </article>
+            </li>
+
+            <!-- Card 6 -->
+            <li class="menu__item">
+              <article class="card" tabindex="0">
+                <div class="card__image-box">
+                  <img src="./images/menu/coffee-6.jpg" alt="Latte" class="card__image" />
+                </div>
+                <div class="card__content">
+                  <div class="card__info">
+                    <h3 class="card__title">Latte</h3>
+                    <p class="card__description">
+                      Espresso coffee with the addition of steamed milk and dense milk foam
+                    </p>
+                  </div>
+                  <p class="card__price">$5.50</p>
+                </div>
+              </article>
+            </li>
+
+            <!-- Card 7 -->
+            <li class="menu__item">
+              <article class="card" tabindex="0">
+                <div class="card__image-box">
+                  <img src="./images/menu/coffee-7.jpg" alt="Latte macchiato" class="card__image" />
+                </div>
+                <div class="card__content">
+                  <div class="card__info">
+                    <h3 class="card__title">Latte macchiato</h3>
+                    <p class="card__description">
+                      Espresso with milk and foam, top with flavored syrop
+                    </p>
+                  </div>
+                  <p class="card__price">$5.50</p>
+                </div>
+              </article>
+            </li>
+
+            <!-- Card 8 -->
+            <li class="menu__item">
+              <article class="card" tabindex="0">
+                <div class="card__image-box">
+                  <img src="./images/menu/coffee-8.jpg" alt="Coffee with cognac" class="card__image" />
+                </div>
+                <div class="card__content">
+                  <div class="card__info">
+                    <h3 class="card__title">Coffee with cognac</h3>
+                    <p class="card__description">Fragrant black coffee with cognac and whipped cream</p>
+                  </div>
+                  <p class="card__price">$6.50</p>
+                </div>
+              </article>
+            </li>
+          </ul>
+
+          <!-- Load more button (visible on tablet and mobile) -->
+          <button
+            type="button"
+            class="button button--circle menu__load-more"
+            aria-label="Load more products"
+          >
+            <img
+              src="./src/assets/icons/refresh.svg"
+              alt=""
+              width="24"
+              height="24"
+              aria-hidden="true"
+              class="menu__load-more-icon"
+            />
+          </button>
+        </div>
+      </section>
+    </main>
+
     <footer class="footer" id="contact">
       <div class="footer__container container">
         <div class="footer__wrapper">
