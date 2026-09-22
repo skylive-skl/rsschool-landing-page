@@ -139,11 +139,11 @@
     display: block;
   }
 
-  @include media-down($bp-tablet) {
+  @media (max-width: 1024px) {
     &__wrapper {
       padding: 100px 60px;
       flex-direction: column;
-      gap: 100px;
+      gap: 60px;
     }
 
     &__content,
@@ -153,6 +153,12 @@
 
     &__contacts {
       padding-top: 0;
+    }
+  }
+
+  @include media-down($bp-tablet) {
+    &__wrapper {
+      gap: 100px;
     }
   }
 
