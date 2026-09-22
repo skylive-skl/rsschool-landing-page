@@ -64,7 +64,7 @@
 [data-theme='dark'] .theme-toggle {
   &__thumb {
     transform: translateX(32px);
-    background-color: var(--color-bg-body);
+    background-color: var(--color-control-bg-active);
   }
 
   &__icon--light {
