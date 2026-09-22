@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coffee House</title>
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem('theme');
+          if (t === 'dark' || t === 'light') {
+            document.documentElement.dataset.theme = t;
+          }
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <header class="header" id="header">
+      <div class="header__container container">
+        <a href="./index.html" class="header__logo logo" aria-label="Coffee House home page">
+          <img src="./src/assets/icons/logo.svg" alt="Coffee House logo" width="100" height="60" class="logo__img" />
+        </a>
+        <nav class="header__nav nav" id="nav-menu">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a href="#favorite" class="nav__link">Favorite coffee</a>
+            </li>
+            <li class="nav__item">
+              <a href="#about" class="nav__link">About</a>
+            </li>
+            <li class="nav__item">
+              <a href="#app" class="nav__link">Mobile app</a>
+            </li>
+            <li class="nav__item">
+              <a href="#contact" class="nav__link">Contact us</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="header__actions">
+          <button type="button" class="theme-toggle" aria-label="Switch to dark theme" aria-pressed="false">
+            <span class="theme-toggle__thumb" aria-hidden="true"></span>
+            <span class="theme-toggle__icon theme-toggle__icon--light" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <circle cx="12" cy="12" r="4.5"/>
+                <path d="M12 2v2.5M12 19.5V22M4.93 4.93l1.77 1.77M17.3 17.3l1.77 1.77M2 12h2.5M19.5 12H22M4.93 19.07l1.77-1.77M17.3 6.7l1.77-1.77"/>
+              </svg>
+            </span>
+            <span class="theme-toggle__icon theme-toggle__icon--dark" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/>
+              </svg>
+            </span>
+          </button>
+          <a href="./menu.html" class="header__menu-link menu-link">
+            <span class="menu-link__text">Menu</span>
+            <img src="./src/assets/icons/cup.svg" alt="" width="20" height="20" aria-hidden="true" class="menu-link__icon" />
+          </a>
+          <button class="burger header__burger" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-menu">
+            <span class="burger__line" aria-hidden="true"></span>
+            <span class="burger__line" aria-hidden="true"></span>
+            <span class="burger__line" aria-hidden="true"></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="hero" id="hero">
+        <div class="hero__container container">
+          <div class="hero__wrapper">
+            <div class="hero__bg" aria-hidden="true">
+              <img src="./src/assets/images/hero.jpg" alt="" class="hero__image" />
+            </div>
+            <div class="hero__content">
+              <h1 class="hero__title">
+                <span class="hero__title--accent">Enjoy</span> premium coffee at our charming cafe
+              </h1>
+              <p class="hero__description">
+                Our cafe is a place to enjoy high-quality coffee and desserts with friends and family.
+              </p>
+              <a href="./menu.html" class="button button--primary hero__btn">
+                <span class="hero__btn-text">Menu</span>
+                <img
+                  src="./src/assets/icons/cup.svg"
+                  alt=""
+                  width="20"
+                  height="20"
+                  aria-hidden="true"
+                  class="hero__btn-icon"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="favorite" id="favorite">
+        <div class="favorite__container container">
+          <h2 class="favorite__title">
+            Choose your <span class="favorite__title--accent">favorite</span> coffee
+          </h2>
+          <div class="slider favorite__slider">
+            <div class="slider__content">
+              <button
+                type="button"
+                class="button button--circle slider__btn slider__btn--prev"
+                aria-label="Previous slide"
+              >
+                <img
+                  src="./src/assets/icons/arrow-left.svg"
+                  alt=""
+                  width="24"
+                  height="24"
+                  aria-hidden="true"
+                  class="slider__btn-icon"
+                />
+              </button>
+
+              <div class="slider__viewport">
+                <ul class="slider__track">
+                  <!-- Slide 1 -->
+                  <li class="slider__slide">
+                    <div class="slider__image-box">
+                      <img
+                        src="./src/assets/images/coffee-slider-1.png"
+                        alt="S'mores Frappuccino"
+                        class="slider__image"
+                      />
+                    </div>
+                    <div class="slider__info">
+                      <h3 class="slider__title">S’mores Frappuccino</h3>
+                      <p class="slider__description">
+                        This new drink takes an espresso and mixes it with brown sugar and cinnamon before being topped
+                        to perfection with oat milk.
+                      </p>
+                      <p class="slider__price">$5.50</p>
+                    </div>
+                  </li>
+
+                  <!-- Slide 2 -->
+                  <li class="slider__slide">
+                    <div class="slider__image-box">
+                      <img
+                        src="./src/assets/images/coffee-slider-2.png"
+                        alt="Caramel Macchiato"
+                        class="slider__image"
+                      />
+                    </div>
+                    <div class="slider__info">
+                      <h3 class="slider__title">Caramel Macchiato</h3>
+                      <p class="slider__description">
+                        Fragrant and velvety espresso with chocolate fudge sauce, caramel syrup, and topped with
+                        whipped cream.
+                      </p>
+                      <p class="slider__price">$5.00</p>
+                    </div>
+                  </li>
+
+                  <!-- Slide 3 -->
+                  <li class="slider__slide">
+                    <div class="slider__image-box">
+                      <img
+                        src="./src/assets/images/coffee-slider-3.png"
+                        alt="Ice coffee"
+                        class="slider__image"
+                      />
+                    </div>
+                    <div class="slider__info">
+                      <h3 class="slider__title">Ice coffee</h3>
+                      <p class="slider__description">
+                        A popular summer drink that combines fresh brewed espresso with milk and ice, topped with
+                        whipped cream.
+                      </p>
+                      <p class="slider__price">$4.50</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+              <button
+                type="button"
+                class="button button--circle slider__btn slider__btn--next"
+                aria-label="Next slide"
+              >
+                <img
+                  src="./src/assets/icons/arrow-right.svg"
+                  alt=""
+                  width="24"
+                  height="24"
+                  aria-hidden="true"
+                  class="slider__btn-icon"
+                />
+              </button>
+            </div>
+
+            <!-- Controls / Indicators -->
+            <div class="slider__controls">
+              <button type="button" class="slider__indicator is-active" aria-label="Slide 1">
+                <span class="slider__progress"></span>
+              </button>
+              <button type="button" class="slider__indicator" aria-label="Slide 2">
+                <span class="slider__progress"></span>
+              </button>
+              <button type="button" class="slider__indicator" aria-label="Slide 3">
+                <span class="slider__progress"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="about" id="about">
+        <div class="about__container container">
+          <h2 class="about__title">
+            Resource is <span class="about__title--accent">the perfect and cozy place</span> where you can enjoy a
+            variety of hot beverages, relax, catch up with friends, or get some work done.
+          </h2>
+          <div class="about__gallery">
+            <div class="about__column">
+              <div class="about__image-box about__image-box--large">
+                <img
+                  src="./src/assets/images/about-1.jpg"
+                  alt="Young woman drinking coffee at a cafe terrace"
+                  class="about__image"
+                />
+              </div>
+              <div class="about__image-box about__image-box--small">
+                <img
+                  src="./src/assets/images/about-2.jpg"
+                  alt="Man working on a laptop with a cup of coffee"
+                  class="about__image"
+                />
+              </div>
+            </div>
+            <div class="about__column">
+              <div class="about__image-box about__image-box--small">
+                <img
+                  src="./src/assets/images/about-3.jpg"
+                  alt="Cozy cup of coffee with fairy lights on a table"
+                  class="about__image"
+                />
+              </div>
+              <div class="about__image-box about__image-box--large">
+                <img
+                  src="./src/assets/images/about-4.jpg"
+                  alt="Happy couple drinking coffee together outdoors"
+                  class="about__image"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="app" id="app">
+        <div class="app__container container">
+          <div class="app__content">
+            <h2 class="app__title">
+              Offer is <span class="app__title--accent">more than just</span> cafe
+            </h2>
+            <p class="app__description">
+              We want to make it easier for you to enjoy your favorite coffee and treats. Download our mobile app to
+              order in advance, customize your drinks, and earn rewards with every purchase.
+            </p>
+            <div class="app__buttons">
+              <a
+                href="https://www.apple.com/app-store/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="button button--app app__btn"
+              >
+                <img
+                  src="./src/assets/icons/apple.svg"
+                  alt=""
+                  width="36"
+                  height="36"
+                  aria-hidden="true"
+                  class="button__store-icon"
+                />
+                <span class="button__store-text">
+                  <span class="button__store-label">Available on the</span>
+                  <span class="button__store-title">App Store</span>
+                </span>
+              </a>
+              <a
+                href="https://play.google.com/store/apps"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="button button--app app__btn"
+              >
+                <img
+                  src="./src/assets/icons/google-play.svg"
+                  alt=""
+                  width="36"
+                  height="36"
+                  aria-hidden="true"
+                  class="button__store-icon"
+                />
+                <span class="button__store-text">
+                  <span class="button__store-label">Available on</span>
+                  <span class="button__store-title">Google Play</span>
+                </span>
+              </a>
+            </div>
+          </div>
+          <div class="app__media">
+            <img
+              src="./src/assets/images/mobile-app.png"
+              alt="Coffee House mobile application interface shown on two smartphones"
+              class="app__image"
+            />
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer" id="contact">
+      <div class="footer__container container">
+        <div class="footer__wrapper">
+          <div class="footer__content">
+            <h2 class="footer__title">
+              Sip, Savor, Smile. <br />
+              <span class="footer__title--accent">It’s coffee time!</span>
+            </h2>
+            <ul class="footer__socials">
+              <li class="footer__social-item">
+                <a
+                  href="https://twitter.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="footer__social-link"
+                  aria-label="Visit our Twitter"
+                >
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </a>
+              </li>
+              <li class="footer__social-item">
+                <a
+                  href="https://instagram.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="footer__social-link"
+                  aria-label="Visit our Instagram"
+                >
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke="currentColor" stroke-width="1.5"/>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37Z" stroke="currentColor" stroke-width="1.5"/>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  </svg>
+                </a>
+              </li>
+              <li class="footer__social-item">
+                <a
+                  href="https://facebook.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="footer__social-link"
+                  aria-label="Visit our Facebook"
+                >
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3V2Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer__contacts">
+            <h3 class="footer__contacts-title">Contact Us</h3>
+            <ul class="footer__contacts-list">
+              <li class="footer__contact-item">
+                <a
+                  href="https://maps.google.com/?q=8558+Green+Rd.,+LA"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="footer__contact-link"
+                >
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="footer__contact-icon">
+                    <path d="M16.667 8.333c0 3.682-6.667 10-6.667 10s-6.667-6.318-6.667-10a6.667 6.667 0 1 1 13.334 0z" stroke="currentColor" stroke-width="1.5"/>
+                    <circle cx="10" cy="8.333" r="1.667" stroke="currentColor" stroke-width="1.5"/>
+                  </svg>
+                  <span>8558 Green Rd., LA</span>
+                </a>
+              </li>
+              <li class="footer__contact-item">
+                <a href="tel:+16035550123" class="footer__contact-link">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="footer__contact-icon">
+                    <path d="M15.1 12.25l-3.43.67c-2.32-1.16-3.75-2.5-4.58-4.58l.64-3.44-1.21-3.23H3.73C2.6 1.67 1.71 2.6 1.9 3.71 2.3 6.09 3.37 10.04 6.25 12.92c2.88 2.88 6.83 3.95 9.21 4.35 1.11.19 2.04-.7 2.04-1.83v-2.61l-2.4-1.58z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  <span>+1 (603) 555-0123</span>
+                </a>
+              </li>
+              <li class="footer__contact-item footer__contact-item--static">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="footer__contact-icon">
+                  <circle cx="10" cy="10" r="8.333" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="M10 5v5h5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>Mon-Sat: 9:00 AM – 23:00 PM</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="./src/js/home.js"></script>
+  </body>
+</html>

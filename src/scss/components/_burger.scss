@@ -1,0 +1,37 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.burger {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 6px;
+  width: 44px;
+  height: 44px;
+  border-radius: $radius-circle;
+  border: 1px solid var(--color-border-primary);
+  background-color: transparent;
+  cursor: pointer;
+  padding: 0;
+  transition: border-color $transition-default;
+  flex-shrink: 0;
+
+  @media (hover: hover) {
+    &:hover {
+      border-color: var(--color-text-accent);
+    }
+  }
+
+  @include media-down($bp-tablet) {
+    display: flex;
+  }
+
+  &__line {
+    width: 16px;
+    height: 2px;
+    background-color: var(--color-text-primary);
+    border-radius: $radius-xs;
+    transition: transform $transition-default, opacity $transition-default, background-color $transition-default;
+  }
+}

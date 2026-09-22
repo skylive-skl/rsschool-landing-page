@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coffee House — Menu</title>
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem('theme');
+          if (t === 'dark' || t === 'light') {
+            document.documentElement.dataset.theme = t;
+          }
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <header class="header" id="header">
+      <div class="header__container container">
+        <a href="./index.html" class="header__logo logo" aria-label="Coffee House home page">
+          <img src="./src/assets/icons/logo.svg" alt="Coffee House logo" width="100" height="60" class="logo__img" />
+        </a>
+        <nav class="header__nav nav" id="nav-menu">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a href="./index.html#favorite" class="nav__link">Favorite coffee</a>
+            </li>
+            <li class="nav__item">
+              <a href="./index.html#about" class="nav__link">About</a>
+            </li>
+            <li class="nav__item">
+              <a href="./index.html#app" class="nav__link">Mobile app</a>
+            </li>
+            <li class="nav__item">
+              <a href="./index.html#contact" class="nav__link">Contact us</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="header__actions">
+          <button type="button" class="theme-toggle" aria-label="Switch to dark theme" aria-pressed="false">
+            <span class="theme-toggle__thumb" aria-hidden="true"></span>
+            <span class="theme-toggle__icon theme-toggle__icon--light" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <circle cx="12" cy="12" r="4.5"/>
+                <path d="M12 2v2.5M12 19.5V22M4.93 4.93l1.77 1.77M17.3 17.3l1.77 1.77M2 12h2.5M19.5 12H22M4.93 19.07l1.77-1.77M17.3 6.7l1.77-1.77"/>
+              </svg>
+            </span>
+            <span class="theme-toggle__icon theme-toggle__icon--dark" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/>
+              </svg>
+            </span>
+          </button>
+          <a href="./menu.html" class="header__menu-link menu-link is-active" aria-current="page">
+            <span class="menu-link__text">Menu</span>
+            <img src="./src/assets/icons/cup.svg" alt="" width="20" height="20" aria-hidden="true" class="menu-link__icon" />
+          </a>
+          <button class="burger header__burger" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-menu">
+            <span class="burger__line" aria-hidden="true"></span>
+            <span class="burger__line" aria-hidden="true"></span>
+            <span class="burger__line" aria-hidden="true"></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="menu" id="menu">
+        <div class="menu__container container">
+          <h1 class="menu__title">
+            Behind each of our cups hides an <span class="menu__title--accent">amazing surprise</span>
+          </h1>
+
+          <!-- Category Tabs -->
+          <div class="tabs menu__tabs" role="tablist" aria-label="Menu categories">
+            <button
+              type="button"
+              class="button button--tag tabs__btn is-active"
+              role="tab"
+              aria-selected="true"
+              aria-controls="menu-products"
+              id="tab-coffee"
+            >
+              <span class="button__icon">
+                <img src="./src/assets/icons/cup.svg" alt="" width="16" height="16" aria-hidden="true" />
+              </span>
+              <span class="button__text">Coffee</span>
+            </button>
+            <button
+              type="button"
+              class="button button--tag tabs__btn"
+              role="tab"
+              aria-selected="false"
+              aria-controls="menu-products"
+              id="tab-tea"
+            >
+              <span class="button__icon">
+                <img src="./src/assets/icons/tea.svg" alt="" width="16" height="16" aria-hidden="true" />
+              </span>
+              <span class="button__text">Tea</span>
+            </button>
+            <button
+              type="button"
+              class="button button--tag tabs__btn"
+              role="tab"
+              aria-selected="false"
+              aria-controls="menu-products"
+              id="tab-dessert"
+            >
+              <span class="button__icon">
+                <img src="./src/assets/icons/dessert.svg" alt="" width="16" height="16" aria-hidden="true" />
+              </span>
+              <span class="button__text">Dessert</span>
+            </button>
+          </div>
+
+          <!-- Products Tab Panel -->
+          <div class="menu__tabpanel" id="menu-products" role="tabpanel" aria-labelledby="tab-coffee">
+            <!-- Products Grid -->
+            <ul class="menu__grid">
+              <!-- Card 1 -->
+              <li class="menu__item">
+                <article class="card" tabindex="0">
+                  <div class="card__image-box">
+                    <img src="./images/menu/coffee-1.jpg" alt="Irish coffee" class="card__image" />
+                  </div>
+                  <div class="card__content">
+                    <div class="card__info">
+                      <h2 class="card__title">Irish coffee</h2>
+                      <p class="card__description">
+                        Fragrant black coffee with Jameson Irish whiskey and whipped milk
+                      </p>
+                    </div>
+                    <p class="card__price">$7.00</p>
+                  </div>
+                </article>
+              </li>
+
+              <!-- Card 2 -->
+              <li class="menu__item">
+                <article class="card" tabindex="0">
+                  <div class="card__image-box">
+                    <img src="./images/menu/coffee-2.jpg" alt="Kahlua coffee" class="card__image" />
+                  </div>
+                  <div class="card__content">
+                    <div class="card__info">
+                      <h2 class="card__title">Kahlua coffee</h2>
+                      <p class="card__description">
+                        Classic coffee with milk and Kahlua liqueur under a cap of frothed milk
+                      </p>
+                    </div>
+                    <p class="card__price">$7.00</p>
+                  </div>
+                </article>
+              </li>
+
+              <!-- Card 3 -->
+              <li class="menu__item">
+                <article class="card" tabindex="0">
+                  <div class="card__image-box">
+                    <img src="./images/menu/coffee-3.jpg" alt="Honey raf" class="card__image" />
+                  </div>
+                  <div class="card__content">
+                    <div class="card__info">
+                      <h2 class="card__title">Honey raf</h2>
+                      <p class="card__description">Espresso with frothed milk, cream and aromatic honey</p>
+                    </div>
+                    <p class="card__price">$5.50</p>
+                  </div>
+                </article>
+              </li>
+
+              <!-- Card 4 -->
+              <li class="menu__item">
+                <article class="card" tabindex="0">
+                  <div class="card__image-box">
+                    <img src="./images/menu/coffee-4.jpg" alt="Ice cappuccino" class="card__image" />
+                  </div>
+                  <div class="card__content">
+                    <div class="card__info">
+                      <h2 class="card__title">Ice cappuccino</h2>
+                      <p class="card__description">Cappuccino with spicy foam in a high glass with ice</p>
+                    </div>
+                    <p class="card__price">$6.00</p>
+                  </div>
+                </article>
+              </li>
+
+              <!-- Card 5 -->
+              <li class="menu__item">
+                <article class="card" tabindex="0">
+                  <div class="card__image-box">
+                    <img src="./images/menu/coffee-5.jpg" alt="Espresso" class="card__image" />
+                  </div>
+                  <div class="card__content">
+                    <div class="card__info">
+                      <h2 class="card__title">Espresso</h2>
+                      <p class="card__description">Classic black coffee</p>
+                    </div>
+                    <p class="card__price">$4.50</p>
+                  </div>
+                </article>
+              </li>
+
+              <!-- Card 6 -->
+              <li class="menu__item">
+                <article class="card" tabindex="0">
+                  <div class="card__image-box">
+                    <img src="./images/menu/coffee-6.jpg" alt="Latte" class="card__image" />
+                  </div>
+                  <div class="card__content">
+                    <div class="card__info">
+                      <h2 class="card__title">Latte</h2>
+                      <p class="card__description">
+                        Espresso coffee with the addition of steamed milk and dense milk foam
+                      </p>
+                    </div>
+                    <p class="card__price">$5.50</p>
+                  </div>
+                </article>
+              </li>
+
+              <!-- Card 7 -->
+              <li class="menu__item">
+                <article class="card" tabindex="0">
+                  <div class="card__image-box">
+                    <img src="./images/menu/coffee-7.jpg" alt="Latte macchiato" class="card__image" />
+                  </div>
+                  <div class="card__content">
+                    <div class="card__info">
+                      <h2 class="card__title">Latte macchiato</h2>
+                      <p class="card__description">
+                        Espresso with milk and foam, top with flavored syrop
+                      </p>
+                    </div>
+                    <p class="card__price">$5.50</p>
+                  </div>
+                </article>
+              </li>
+
+              <!-- Card 8 -->
+              <li class="menu__item">
+                <article class="card" tabindex="0">
+                  <div class="card__image-box">
+                    <img src="./images/menu/coffee-8.jpg" alt="Coffee with cognac" class="card__image" />
+                  </div>
+                  <div class="card__content">
+                    <div class="card__info">
+                      <h2 class="card__title">Coffee with cognac</h2>
+                      <p class="card__description">Fragrant black coffee with cognac and whipped cream</p>
+                    </div>
+                    <p class="card__price">$6.50</p>
+                  </div>
+                </article>
+              </li>
+            </ul>
+
+            <!-- Load more button (visible on tablet and mobile) -->
+            <button
+              type="button"
+              class="button button--circle menu__load-more"
+              aria-label="Load more products"
+            >
+              <img
+                src="./src/assets/icons/refresh.svg"
+                alt=""
+                width="24"
+                height="24"
+                aria-hidden="true"
+                class="menu__load-more-icon"
+              />
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer" id="contact">
+      <div class="footer__container container">
+        <div class="footer__wrapper">
+          <div class="footer__content">
+            <h2 class="footer__title">
+              Sip, Savor, Smile. <br />
+              <span class="footer__title--accent">It’s coffee time!</span>
+            </h2>
+            <ul class="footer__socials">
+              <li class="footer__social-item">
+                <a
+                  href="https://twitter.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="footer__social-link"
+                  aria-label="Visit our Twitter"
+                >
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </a>
+              </li>
+              <li class="footer__social-item">
+                <a
+                  href="https://instagram.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="footer__social-link"
+                  aria-label="Visit our Instagram"
+                >
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke="currentColor" stroke-width="1.5"/>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37Z" stroke="currentColor" stroke-width="1.5"/>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  </svg>
+                </a>
+              </li>
+              <li class="footer__social-item">
+                <a
+                  href="https://facebook.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="footer__social-link"
+                  aria-label="Visit our Facebook"
+                >
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3V2Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer__contacts">
+            <h3 class="footer__contacts-title">Contact Us</h3>
+            <ul class="footer__contacts-list">
+              <li class="footer__contact-item">
+                <a
+                  href="https://maps.google.com/?q=8558+Green+Rd.,+LA"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="footer__contact-link"
+                >
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="footer__contact-icon">
+                    <path d="M16.667 8.333c0 3.682-6.667 10-6.667 10s-6.667-6.318-6.667-10a6.667 6.667 0 1 1 13.334 0z" stroke="currentColor" stroke-width="1.5"/>
+                    <circle cx="10" cy="8.333" r="1.667" stroke="currentColor" stroke-width="1.5"/>
+                  </svg>
+                  <span>8558 Green Rd., LA</span>
+                </a>
+              </li>
+              <li class="footer__contact-item">
+                <a href="tel:+16035550123" class="footer__contact-link">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="footer__contact-icon">
+                    <path d="M15.1 12.25l-3.43.67c-2.32-1.16-3.75-2.5-4.58-4.58l.64-3.44-1.21-3.23H3.73C2.6 1.67 1.71 2.6 1.9 3.71 2.3 6.09 3.37 10.04 6.25 12.92c2.88 2.88 6.83 3.95 9.21 4.35 1.11.19 2.04-.7 2.04-1.83v-2.61l-2.4-1.58z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  <span>+1 (603) 555-0123</span>
+                </a>
+              </li>
+              <li class="footer__contact-item footer__contact-item--static">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="footer__contact-icon">
+                  <circle cx="10" cy="10" r="8.333" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="M10 5v5h5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>Mon-Sat: 9:00 AM – 23:00 PM</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="./src/js/menu.js"></script>
+  </body>
+</html>

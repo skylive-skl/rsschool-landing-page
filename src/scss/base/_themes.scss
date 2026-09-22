@@ -1,0 +1,79 @@
+:root {
+  // Backgrounds
+  --color-bg-body: #e1d4c9;
+  --color-bg-container: #665f55;
+  --color-bg-card: transparent;
+  --color-bg-card-hover: #e1d4c9;
+  --color-bg-modal: #e1d4c9;
+  --color-bg-overlay: rgba(64, 63, 61, 0.8);
+  --color-bg-btn-primary: #665f55;
+  --color-bg-btn-primary-hover: #403f3d;
+  --color-bg-btn-secondary: #e1d4c9;
+  --color-bg-btn-secondary-hover: #665f55;
+  --color-bg-tag-active: #665f55;
+
+  // Text
+  --color-text-primary: #403f3d;
+  --color-text-secondary: #e1d4c9;
+  --color-text-accent: #b58463;
+  --color-text-btn-primary: #e1d4c9;
+  --color-text-btn-secondary: #403f3d;
+  --color-text-btn-secondary-hover: #e1d4c9;
+  --color-text-tag-active: #e1d4c9;
+
+  // Borders
+  --color-border-primary: #c1b6ad;
+  --color-border-secondary: #c1b6ad;
+  --color-border-btn: #665f55;
+  --color-border-card: #c1b6ad;
+  --color-border-tag-active: #665f55;
+
+  // Controls & Slider
+  --color-control-border: #c1b6ad;
+  --color-control-bg: transparent;
+  --color-control-bg-active: #665f55;
+  --color-control-line: #c1b6ad;
+  --color-control-line-active: #665f55;
+  --color-control-icon: #403f3d;
+  --color-control-icon-hover: #e1d4c9;
+}
+
+[data-theme='dark'] {
+  // Backgrounds
+  --color-bg-body: #211f1d;
+  --color-bg-container: #2b2825;
+  --color-bg-card: transparent;
+  --color-bg-card-hover: #2b2825;
+  --color-bg-modal: #211f1d;
+  --color-bg-overlay: rgba(0, 0, 0, 0.8);
+  --color-bg-btn-primary: #e1d4c9;
+  --color-bg-btn-primary-hover: #b58463;
+  --color-bg-btn-secondary: #211f1d;
+  --color-bg-btn-secondary-hover: #665f55;
+  --color-bg-tag-active: #e1d4c9;
+
+  // Text
+  --color-text-primary: #e1d4c9;
+  --color-text-secondary: #c1b6ad;
+  --color-text-accent: #b58463;
+  --color-text-btn-primary: #403f3d;
+  --color-text-btn-secondary: #e1d4c9;
+  --color-text-btn-secondary-hover: #e1d4c9;
+  --color-text-tag-active: #403f3d;
+
+  // Borders
+  --color-border-primary: #665f55;
+  --color-border-secondary: #c1b6ad;
+  --color-border-btn: #665f55;
+  --color-border-card: #665f55;
+  --color-border-tag-active: #e1d4c9;
+
+  // Controls & Slider
+  --color-control-border: #665f55;
+  --color-control-bg: transparent;
+  --color-control-bg-active: #e1d4c9;
+  --color-control-line: #665f55;
+  --color-control-line-active: #e1d4c9;
+  --color-control-icon: #e1d4c9;
+  --color-control-icon-hover: #403f3d;
+}

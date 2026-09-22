@@ -1,0 +1,129 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.menu {
+  padding-bottom: 100px;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__title {
+    font-size: 60px;
+    font-weight: 600;
+    line-height: 1.25;
+    text-align: center;
+    color: var(--color-text-primary);
+    max-width: 800px;
+    margin-bottom: 40px;
+
+    &--accent {
+      color: var(--color-text-accent);
+      font-style: italic;
+    }
+  }
+
+  &__tabpanel {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 310px));
+    gap: 40px;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  &__load-more {
+    display: none;
+    margin-top: 40px;
+
+    @media (hover: hover) {
+      &:hover {
+        .menu__load-more-icon {
+          filter: invert(1);
+          transform: rotate(45deg);
+        }
+      }
+    }
+  }
+
+  &__load-more-icon {
+    width: 24px;
+    height: 24px;
+    display: block;
+    transition: transform $transition-default, filter $transition-default;
+  }
+
+  @media (max-width: 1360px) {
+    &__grid {
+      grid-template-columns: repeat(3, minmax(0, 310px));
+      gap: 32px;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    &__grid {
+      grid-template-columns: repeat(2, minmax(0, 310px));
+      gap: 32px;
+    }
+  }
+
+  @include media-down($bp-tablet) {
+    &__grid {
+      grid-template-columns: repeat(2, minmax(0, 310px));
+      gap: 40px;
+    }
+
+    &__item:nth-child(n + 5) {
+      display: none;
+    }
+
+    &__load-more {
+      display: flex;
+    }
+  }
+
+  @include media-down(680px) {
+    &__grid {
+      grid-template-columns: minmax(0, 310px);
+      gap: 40px;
+    }
+  }
+
+  @include media-down($bp-mobile) {
+    padding-bottom: 40px;
+
+    &__title {
+      font-size: 32px;
+    }
+  }
+}
+
+[data-theme='dark'] {
+  .menu__load-more-icon {
+    filter: invert(1);
+  }
+
+  @media (hover: hover) {
+    .menu__load-more:hover .menu__load-more-icon {
+      filter: none;
+      transform: rotate(45deg);
+    }
+  }
+}

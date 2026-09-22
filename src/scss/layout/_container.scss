@@ -1,0 +1,17 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.container {
+  width: 100%;
+  max-width: $container-max-width;
+  margin-inline: auto;
+  padding-inline: $container-padding-desktop;
+
+  @include media-down($bp-tablet) {
+    padding-inline: $container-padding-tablet;
+  }
+
+  @include media-down($bp-mobile) {
+    padding-inline: $container-padding-mobile;
+  }
+}
