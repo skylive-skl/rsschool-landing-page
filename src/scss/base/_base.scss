@@ -21,6 +21,10 @@ body {
   transition: background-color $transition-default, color $transition-default;
   overflow-x: hidden;
   margin: 0;
+
+  &.is-locked {
+    overflow: hidden;
+  }
 }
 
 h1,
