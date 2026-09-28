@@ -34,4 +34,17 @@
     border-radius: $radius-xs;
     transition: transform $transition-default, opacity $transition-default, background-color $transition-default;
   }
+
+  // Cross icon: lines are 2px tall with a 6px gap, so outer lines move by 8px
+  &.is-open &__line:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  &.is-open &__line:nth-child(2) {
+    opacity: 0;
+  }
+
+  &.is-open &__line:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
 }

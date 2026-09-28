@@ -39,6 +39,7 @@
     width: 100%;
     max-width: 480px;
     min-width: 0;
+    touch-action: pan-y;
   }
 
   &__track {
@@ -148,11 +149,17 @@
 
   @include media-down(640px) {
     &__content {
-      justify-content: center;
+      gap: 8px;
     }
 
     &__btn {
-      display: none;
+      width: 40px;
+      height: 40px;
+    }
+
+    &__btn-icon {
+      width: 20px;
+      height: 20px;
     }
   }
 
