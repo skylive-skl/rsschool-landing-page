@@ -4,6 +4,9 @@
 
 import products from '../data/products.json';
 
+const MOBILE_QUERY = '(max-width: 768px)';
+const MOBILE_INITIAL_COUNT = 4;
+
 function createElement(tag, className, text) {
   const element = document.createElement(tag);
   if (className) element.className = className;
@@ -43,10 +46,13 @@ export function initCatalog() {
   const grid = document.querySelector('.menu__grid');
   const panel = document.querySelector('.menu__tabpanel');
   const tabs = [...document.querySelectorAll('.tabs__btn[data-category]')];
+  const loadMoreBtn = document.querySelector('.menu__load-more');
+  const mobileQuery = window.matchMedia(MOBILE_QUERY);
   if (!grid || !tabs.length) return;
 
   const state = {
     category: tabs[0].dataset.category,
+    expanded: false,
   };
 
   function renderTabs() {
@@ -65,11 +71,25 @@ export function initCatalog() {
       .map(({ product, id }) => createCard(product, id));
 
     grid.replaceChildren(...cards);
+    updateVisibility();
+  }
+
+  // On tablet and mobile only the first cards are shown until "load more" is pressed
+  function updateVisibility() {
+    const items = [...grid.children];
+    const limit = mobileQuery.matches && !state.expanded ? MOBILE_INITIAL_COUNT : items.length;
+
+    items.forEach((item, index) => {
+      item.hidden = index >= limit;
+    });
+
+    loadMoreBtn?.classList.toggle('is-visible', items.length > limit);
   }
 
   function setCategory(category) {
     if (category === state.category) return;
     state.category = category;
+    state.expanded = false;
     renderTabs();
     renderCards();
   }
@@ -77,6 +97,13 @@ export function initCatalog() {
   tabs.forEach((tab) => {
     tab.addEventListener('click', () => setCategory(tab.dataset.category));
   });
+
+  loadMoreBtn?.addEventListener('click', () => {
+    state.expanded = true;
+    updateVisibility();
+  });
+
+  mobileQuery.addEventListener('change', updateVisibility);
 
   renderTabs();
   renderCards();

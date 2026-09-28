@@ -47,11 +47,19 @@
     display: flex;
     justify-content: center;
     width: 100%;
+
+    &[hidden] {
+      display: none;
+    }
   }
 
   &__load-more {
     display: none;
     margin-top: 40px;
+
+    &.is-visible {
+      display: flex;
+    }
 
     @media (hover: hover) {
       &:hover {
@@ -88,14 +96,6 @@
     &__grid {
       grid-template-columns: repeat(2, minmax(0, 310px));
       gap: 40px;
-    }
-
-    &__item:nth-child(n + 5) {
-      display: none;
-    }
-
-    &__load-more {
-      display: flex;
     }
   }
 
