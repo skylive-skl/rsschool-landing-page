@@ -1,0 +1,137 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.modal {
+  width: calc(100% - 32px);
+  max-width: 800px;
+  max-height: calc(100vh - 32px);
+  max-height: calc(100dvh - 32px);
+  padding: 0;
+  border: none;
+  border-radius: $radius-xl;
+  background-color: var(--color-bg-modal);
+  color: var(--color-text-primary);
+  overflow-y: auto;
+
+  &::backdrop {
+    background-color: var(--color-bg-overlay);
+  }
+
+  &[open] {
+    animation: modal-show $transition-default;
+  }
+
+  &[open]::backdrop {
+    animation: modal-backdrop-show $transition-default;
+  }
+
+  &__inner {
+    display: flex;
+    gap: 20px;
+    padding: 16px;
+  }
+
+  &__image-box {
+    flex: 0 0 310px;
+    align-self: flex-start;
+    aspect-ratio: 1 / 1;
+    border-radius: $radius-xl;
+    overflow: hidden;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  &__title {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.25;
+  }
+
+  &__description {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  &__options {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    &:empty {
+      display: none;
+    }
+  }
+
+  &__total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.25;
+  }
+
+  &__note {
+    display: flex;
+    gap: 8px;
+    padding-top: 12px;
+    border-top: 1px solid var(--color-border-primary);
+    font-size: 10px;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+
+  &__note-icon {
+    flex-shrink: 0;
+  }
+
+  &__close {
+    width: 100%;
+  }
+
+  @include media-down(640px) {
+    &__image-box {
+      display: none;
+    }
+  }
+}
+
+@keyframes modal-show {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes modal-backdrop-show {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
