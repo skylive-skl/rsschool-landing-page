@@ -80,6 +80,62 @@
     }
   }
 
+  &__group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-inline-size: 0;
+    margin: 0;
+    padding: 0;
+    border: none;
+  }
+
+  &__group-title {
+    padding: 0;
+    margin-bottom: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+  }
+
+  &__group-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  &__option {
+    position: relative;
+    display: inline-flex;
+    cursor: pointer;
+  }
+
+  // Native input stays accessible, the tag button shows its state
+  &__option-input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: 0;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  &__option-input:checked + .button--tag {
+    background-color: var(--color-bg-tag-active);
+    color: var(--color-text-tag-active);
+    border-color: var(--color-border-tag-active);
+
+    .button__icon {
+      background-color: var(--color-bg-body);
+      color: var(--color-text-primary);
+    }
+  }
+
+  &__option-input:focus-visible + .button--tag {
+    outline: 2px solid var(--color-text-accent);
+    outline-offset: 2px;
+  }
+
   &__total {
     display: flex;
     justify-content: space-between;
