@@ -64,7 +64,27 @@
 
   @include media-down($bp-tablet) {
     &__nav {
-      display: none;
+      position: fixed;
+      top: var(--header-height, 100px);
+      right: 0;
+      bottom: 0;
+      left: 0;
+      flex-direction: column;
+      align-items: center;
+      padding-block: 60px;
+      overflow-y: auto;
+      background-color: var(--color-bg-body);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateX(100%);
+      transition: transform $transition-default, opacity $transition-default, visibility $transition-default,
+        background-color $transition-default;
+
+      &.is-open {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(0);
+      }
     }
 
     &__menu-link {
@@ -86,6 +106,37 @@
 
   &__item {
     display: flex;
+
+    &--mobile {
+      display: none;
+    }
+  }
+
+  &__link--menu {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    .menu-link__icon {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  @include media-down($bp-tablet) {
+    &__list {
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    &__item--mobile {
+      display: flex;
+    }
+
+    &__link {
+      font-size: 32px;
+      line-height: 1.25;
+    }
   }
 
   &__link {
