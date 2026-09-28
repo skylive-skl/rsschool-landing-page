@@ -41,14 +41,43 @@ function createCard(product, id) {
 
 export function initCatalog() {
   const grid = document.querySelector('.menu__grid');
-  if (!grid) return;
+  const panel = document.querySelector('.menu__tabpanel');
+  const tabs = [...document.querySelectorAll('.tabs__btn[data-category]')];
+  if (!grid || !tabs.length) return;
 
-  const category = 'coffee';
+  const state = {
+    category: tabs[0].dataset.category,
+  };
 
-  const cards = products
-    .map((product, id) => ({ product, id }))
-    .filter(({ product }) => product.category === category)
-    .map(({ product, id }) => createCard(product, id));
+  function renderTabs() {
+    tabs.forEach((tab) => {
+      const isActive = tab.dataset.category === state.category;
+      tab.classList.toggle('is-active', isActive);
+      tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
+      if (isActive) panel?.setAttribute('aria-labelledby', tab.id);
+    });
+  }
 
-  grid.replaceChildren(...cards);
+  function renderCards() {
+    const cards = products
+      .map((product, id) => ({ product, id }))
+      .filter(({ product }) => product.category === state.category)
+      .map(({ product, id }) => createCard(product, id));
+
+    grid.replaceChildren(...cards);
+  }
+
+  function setCategory(category) {
+    if (category === state.category) return;
+    state.category = category;
+    renderTabs();
+    renderCards();
+  }
+
+  tabs.forEach((tab) => {
+    tab.addEventListener('click', () => setCategory(tab.dataset.category));
+  });
+
+  renderTabs();
+  renderCards();
 }
